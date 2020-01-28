@@ -1,8 +1,8 @@
 use std::collections::HashSet;
 
-type Event = char;
+use crate::event::{Event, Key, MouseEvent};
+
 type Ui = ();
-type Key = char;
 
 pub struct State {
     pub ui: Vec<Ui>,
