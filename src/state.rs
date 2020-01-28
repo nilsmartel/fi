@@ -5,6 +5,7 @@ use crate::event::{Event, Key, MouseEvent};
 type Ui = ();
 
 pub struct State {
+    // Ui Layers
     pub ui: Vec<Ui>,
 }
 

@@ -1,3 +1,4 @@
+mod event;
 mod state;
 
 use std::io::{stdin, stdout, Write};
@@ -8,10 +9,10 @@ use termion::{
 };
 use tui::{backend::TermionBackend, terminal::Terminal};
 
-fn main() {
+fn main() -> std::io::Result<()> {
     let stdin = stdin();
     let mut term = terminal();
-    term.clear();
+    term.clear()?;
 
     for c in stdin.events() {
         let evt = c.unwrap();
@@ -27,6 +28,8 @@ fn main() {
         }
         term.flush().unwrap();
     }
+
+    Ok(())
 }
 
 fn terminal() -> Terminal<impl tui::backend::Backend> {
