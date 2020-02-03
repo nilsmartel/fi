@@ -2,7 +2,7 @@
 //! if no arguments are passed to it
 //! refering to a file that is supposed to be opened
 
-use crate::{Event, State, StateMachine};
+use crate::{Event, State, StateMachine, Ui};
 use std::collections::HashSet;
 use termion::event::Key;
 
@@ -13,7 +13,9 @@ pub struct BaseMachine {
 
 impl BaseMachine {
     fn new() -> BaseMachine {
-        let ui = vec![ui];
+        let x  = tui::widgets::
+        let ui: Ui;
+        let ui = vec![ui.boxed()];
         let state = State { ui };
 
         BaseMachine { state }

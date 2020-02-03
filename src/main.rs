@@ -1,11 +1,9 @@
 mod event;
 mod startscreen;
 mod state;
-mod ui;
 
 pub use event::Event;
 pub use state::{State, StateMachine};
-pub use ui::Ui;
 
 use std::io::{stdin, stdout, Write};
 use termion::{

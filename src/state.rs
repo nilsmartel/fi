@@ -1,11 +1,11 @@
 use std::collections::HashSet;
 
 use crate::event::{Event, Key, MouseEvent};
-use crate::Ui;
+use tui::widgets::Widget;
 
 pub struct State {
     // Ui Layers
-    pub ui: Vec<Box<Ui>>,
+    pub ui: Vec<Box<dyn Widget>>,
 }
 
 pub trait StateMachine {
