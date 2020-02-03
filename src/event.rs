@@ -9,6 +9,7 @@ pub enum Event {
 
 impl From<char> for Event {
     fn from(c: char) -> Event {
-        let key = Key::Char(
+        let key = Key::Char(c);
+        Event::Key(key)
     }
 }
