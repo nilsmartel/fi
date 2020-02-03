@@ -4,6 +4,7 @@ pub enum Event {
     Key(Key),
     Mouse(MouseEvent),
     Time(std::time::SystemTime),
+    Command(String),
     SignalRaw(Vec<u8>),
 }
 
