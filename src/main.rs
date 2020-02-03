@@ -1,9 +1,15 @@
 mod event;
+mod startscreen;
 mod state;
+mod ui;
+
+pub use event::Event;
+pub use state::{State, StateMachine};
+pub use ui::Ui;
 
 use std::io::{stdin, stdout, Write};
 use termion::{
-    event::{Event, Key, MouseEvent},
+    event::{Key, MouseEvent},
     input::{MouseTerminal, TermRead},
     raw::IntoRawMode,
 };
@@ -17,8 +23,8 @@ fn main() -> std::io::Result<()> {
     for c in stdin.events() {
         let evt = c.unwrap();
         match evt {
-            Event::Key(Key::Char('q')) => break,
-            Event::Mouse(me) => match me {
+            termion::event::Event::Key(Key::Char('q')) => break,
+            termion::event::Event::Mouse(me) => match me {
                 MouseEvent::Press(_, x, y) => {
                     // write!(stdout, "{}x", termion::cursor::Goto(x, y)).unwrap();
                 }
