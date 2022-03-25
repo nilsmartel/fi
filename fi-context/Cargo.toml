@@ -6,3 +6,5 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+ropey = "1.4.1"             # A fast and robust text rope for Rust
+winit = "0.26.1"             # Cross-platform window creation library.
